@@ -5,9 +5,8 @@ Rails.application.routes.draw do
       get 'movie_comment'
     end
   end
-  get ':id', to: 'reviews#new', as: 'new_review'
-  post 'reviews/create'
 
+  resources :reviews
   resources :movies
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

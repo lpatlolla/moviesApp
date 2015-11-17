@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  def new
+  def show
     @movie = Movie.find params[:id]
     @review = Review.new
   end
@@ -10,6 +10,8 @@ class ReviewsController < ApplicationController
       redirect_to comment_path(@review)
     end
   end
+  
+ 
   
   private
   
