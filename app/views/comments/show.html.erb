@@ -1,0 +1,13 @@
+  <span class="label label-primary">Movie:</span>    <%= @review.movie.name %><br/><br/>
+  <span class="label label-primary">Year</span>   <%= @review.movie.year %><br/><br/>
+  <span class="label label-primary">Rating</span>    <%= @review.rating %><br/><br/>
+ 
+
+<table class="table table-bordered">
+	<tr></tr><th>Comments On Movie</th></tr>
+<% @review.comments.each do |comment| %>
+	<tr><td><%= comment.comment %></td></tr>
+<% end %>
+
+</table>
+<%= link_to 'Comments',movie_comment_comment_path(@review), :html => { :class => "btn" } %>

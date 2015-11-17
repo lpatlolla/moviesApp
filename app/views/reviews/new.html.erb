@@ -1,0 +1,6 @@
+<%= form_for @review, :url => {:action => "create"} do |f| %>
+	Description:<%= f.text_field :description %><br />
+	Rating: <%= f.text_field :rating%><br />
+	<%= hidden_field_tag :movie, @movie.id %>
+	<%= f.submit %>
+<% end %>

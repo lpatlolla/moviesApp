@@ -1,0 +1,6 @@
+<%=form_for @comment do |f|%>
+	<%=f.text_area :comment %>
+	<%= hidden_field_tag :review, @review.id%>
+	<%= f.submit %>
+<% end %>
+

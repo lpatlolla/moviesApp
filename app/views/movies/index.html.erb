@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Movies</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Year</th>
+      <th>Actions</th>
+      <th>Reviews</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.name %></td>
+        <td><%= movie.year %></td>
+        <td><%= link_to 'Show', movie %>
+        <%= link_to 'Edit', edit_movie_path(movie) %>
+        <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%= link_to 'Review',new_review_path(movie) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %>
